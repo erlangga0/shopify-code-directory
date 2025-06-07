@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* Prism.js theme customization */
+.prism-code {
+  @apply bg-gray-900 text-sm rounded-lg overflow-x-auto;
+  font-family: 'JetBrains Mono', Monaco, Consolas, monospace;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  @apply text-gray-400;
+}
+
+.token.punctuation {
+  @apply text-gray-300;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  @apply text-red-400;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  @apply text-green-400;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  @apply text-yellow-400;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  @apply text-blue-400;
+}
+
+.token.function,
+.token.class-name {
+  @apply text-purple-400;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  @apply text-orange-400;
+}
+
+/* Custom animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+}
+
+/* Loading skeleton */
+.skeleton {
+  @apply animate-pulse bg-gray-200 rounded;
+}
+
+/* Code block styling */
+.code-block {
+  @apply relative;
+}
+
+.code-block .copy-button {
+  @apply absolute top-3 right-3 px-2 py-1 text-xs bg-gray-700 text-white rounded opacity-0 transition-opacity duration-200;
+}
+
+.code-block:hover .copy-button {
+  @apply opacity-100;
+}
+
+/* Custom button styles */
+.btn {
+  @apply px-4 py-2 rounded-md font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+  @apply bg-primary-600 hover:bg-primary-700 text-white focus:ring-primary-500;
+}
+
+.btn-secondary {
+  @apply bg-secondary-200 hover:bg-secondary-300 text-secondary-800 focus:ring-secondary-500;
+}
+
+.btn-success {
+  @apply bg-success-600 hover:bg-success-700 text-white focus:ring-success-500;
+}
+
+.btn-warning {
+  @apply bg-warning-600 hover:bg-warning-700 text-white focus:ring-warning-500;
+}
+
+.btn-error {
+  @apply bg-error-600 hover:bg-error-700 text-white focus:ring-error-500;
+}
